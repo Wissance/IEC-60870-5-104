@@ -90,9 +90,9 @@
 #define COT_SPONT 3U // Spontaneous
 #define COT_INIT 4U // Initialized
 #define COT_REQ 5U // Request or requested
-#define COT_ACT 6U // Activation act
+#define COT_ACT 6U // Activation
 #define COT_ACTCON 7U // Activation confirmation
-#define COT_DEACT 8U // Deactivation deact
+#define COT_DEACT 8U // Deactivation
 #define COT_DEACTCON 9U // Deactivation confirmation
 #define COT_ACTTERM 10U // Activation termination
 #define COT_RETREM 11U // Return information caused by a remote command
