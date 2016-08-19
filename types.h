@@ -2,90 +2,90 @@
 #define TYPES_H
 
 // Process information in monitor direction:
-#define M_SP_NA_1 1 // Single-point information
-#define M_SP_TA_1 2 // Single-point information with time tag
+#define M_SP_NA_1 1U // Single-point information
+#define M_SP_TA_1 2U // Single-point information with time tag
 
-#define M_DP_NA_1 3 // Double-point information
-#define M_DP_TA_1 4 // Double-point information with time tag
+#define M_DP_NA_1 3U // Double-point information
+#define M_DP_TA_1 4U // Double-point information with time tag
 
-#define M_ST_NA_1 5 // Step position information
-#define M_ST_TA_1 6 // Step position information with time tag
+#define M_ST_NA_1 5U // Step position information
+#define M_ST_TA_1 6U // Step position information with time tag
 
-#define M_BO_NA_1 7 // Bitstring of 32 bit
-#define M_BO_TA_1 8 // Bitstring of 32 bit with time tag
+#define M_BO_NA_1 7U // Bitstring of 32 bit
+#define M_BO_TA_1 8U // Bitstring of 32 bit with time tag
 
-#define M_ME_NA_1 9 // Measured value, normalized value
-#define M_ME_TA_1 10 // Measured value, normalized value with time tag
+#define M_ME_NA_1 9U // Measured value, normalized value
+#define M_ME_TA_1 10U // Measured value, normalized value with time tag
 
-#define M_ME_NB_1 11 // Measured value, scaled value
-#define M_ME_TB_1 12 // Measured value, scaled value with time tag
+#define M_ME_NB_1 11U // Measured value, scaled value
+#define M_ME_TB_1 12U // Measured value, scaled value with time tag
 
-#define M_ME_NC_1 13 // Measured value, short floating point number
-#define M_ME_TC_1 14 // Measured value, short floating point number with time tag
+#define M_ME_NC_1 13U // Measured value, short floating point number
+#define M_ME_TC_1 14U // Measured value, short floating point number with time tag
 
-#define M_IT_NA_1 15 // Integrated totals
-#define M_IT_TA_1 16 // Integrated totals with time tag
+#define M_IT_NA_1 15U // Integrated totals
+#define M_IT_TA_1 16U // Integrated totals with time tag
 
-#define M_EP_TA_1 17 // Event of protection equipment with time tag
-#define M_EP_TB_1 18 // Packed start events of protection equipment with time tag
-#define M_EP_TC_1 19 // Packed output circuit information of protection equipment with time tag
-#define M_PS_NA_1 20 // Point information with status change detection
-#define M_ME_ND_1 21 // Measured value, normalized value without quality descriptor
+#define M_EP_TA_1 17U // Event of protection equipment with time tag
+#define M_EP_TB_1 18U // Packed start events of protection equipment with time tag
+#define M_EP_TC_1 19U // Packed output circuit information of protection equipment with time tag
+#define M_PS_NA_1 20U // Point information with status change detection
+#define M_ME_ND_1 21U // Measured value, normalized value without quality descriptor
 
-#define M_SP_TB_1 30 // Single-point information with time tag CP56Time2a
-#define M_DP_SP_1 31 // Double-point information with time tag CP56Time2a
+#define M_SP_TB_1 30U // Single-point information with time tag CP56Time2a
+#define M_DP_SP_1 31U // Double-point information with time tag CP56Time2a
 
-#define M_ST_TB_1 32 // Step position information with time tag CP56Time2a
-#define M_BO_TB_1 33 // Bitstring of 32 bits with time tag CP56Time2a
+#define M_ST_TB_1 32U // Step position information with time tag CP56Time2a
+#define M_BO_TB_1 33U // Bitstring of 32 bits with time tag CP56Time2a
 
-#define M_ME_TD_1 34 // Measured value, normalized value with time tag CP56Time2a
-#define M_ME_TE_1 35 // Measured value, scaled value with time tag CP56Time2a
-#define M_ME_TF_1 36 // Measured value, short floating point number with time tag CP56Time2a
+#define M_ME_TD_1 34U // Measured value, normalized value with time tag CP56Time2a
+#define M_ME_TE_1 35U // Measured value, scaled value with time tag CP56Time2a
+#define M_ME_TF_1 36U // Measured value, short floating point number with time tag CP56Time2a
 
-#define M_IT_TB_1 37 // Integrated totals with time tag CP56Time2a
-#define M_EP_TD_1 38 // Event of protection equipment with time tag CP56Time2a
-#define M_EP_TE_1 39 // Packed start events of protection equipment with time tag CP56Time2a
-#define M_EP_TF_1 40 // Packed output circuit information of protection equipment with time tag CP56Time2a
+#define M_IT_TB_1 37U // Integrated totals with time tag CP56Time2a
+#define M_EP_TD_1 38U // Event of protection equipment with time tag CP56Time2a
+#define M_EP_TE_1 39U // Packed start events of protection equipment with time tag CP56Time2a
+#define M_EP_TF_1 40U // Packed output circuit information of protection equipment with time tag CP56Time2a
 
 // Process information in control direction:
-#define C_SC_NA_1 45 // Single command
-#define C_DC_NA_1 46 // Double command
-#define C_RC_NA_1 47 // Regulating step command
+#define C_SC_NA_1 45U // Single command
+#define C_DC_NA_1 46U // Double command
+#define C_RC_NA_1 47U // Regulating step command
 
-#define C_SE_NA_1 48 // Set point command, normalized value
-#define C_SE_NB_1 49 // Set point command, scaled value
-#define C_SE_NC_1 50 // Set point command, short floating point number
-#define C_BO_NA_1 51 // Bitstring of 32 bits
+#define C_SE_NA_1 48U // Set point command, normalized value
+#define C_SE_NB_1 49U // Set point command, scaled value
+#define C_SE_NC_1 50U // Set point command, short floating point number
+#define C_BO_NA_1 51U // Bitstring of 32 bits
 
 // ASDUs marked (CON) in control direction are confirmed application services and may be mirrored in
 // monitor direction with different causes acknowledgements(verifications).
 
 // System information in monitor direction:
-#define M_EL_NA_1 70 // End of initialization
+#define M_EL_NA_1 70U // End of initialization
 
 // System information in control direction:
-#define C_IC_NA_1 100 // Interrogation command
-#define C_CI_NA_1 101 // Counter interrogation command
-#define C_RD_NA_1 102 // Read command
-#define C_CS_NA_1 103 // Clock synchronization command
-#define C_TS_NA_1 104 // Test command
-#define C_RP_NA_1 105 // Reset process command
-#define C_CD_NA_1 106 // Delay acquisition command
+#define C_IC_NA_1 100U // Interrogation command
+#define C_CI_NA_1 101U // Counter interrogation command
+#define C_RD_NA_1 102U // Read command
+#define C_CS_NA_1 103U // Clock synchronization command
+#define C_TS_NA_1 104U // Test command
+#define C_RP_NA_1 105U // Reset process command
+#define C_CD_NA_1 106U // Delay acquisition command
 
 // Parameter in control direction:
-#define P_ME_NA_1 110 // Parameter of measured value, normalized value
-#define P_ME_NB_1 111 // Parameter of measured value, scaled value
-#define P_ME_NC_1 112 // Parameter of measured value, short floating point number
-#define P_AC_NA_1 113 // Parameter activation
+#define P_ME_NA_1 110U // Parameter of measured value, normalized value
+#define P_ME_NB_1 111U // Parameter of measured value, scaled value
+#define P_ME_NC_1 112U // Parameter of measured value, short floating point number
+#define P_AC_NA_1 113U // Parameter activation
 
 // File transfer:
-#define F_FR_NA_1 120 // File ready
-#define F_SR_NA_1 121 // Section ready
-#define F_SC_NA_1 122 // Call directory, select file, call file, call section
-#define F_LS_NA_1 123 // Last section, last segment
-#define F_AF_NA_1 124 // Ack file, ack section
-#define F_SG_NA_1 125 // Segment
-#define F_DR_TA_1 126 // Directory
+#define F_FR_NA_1 120U // File ready
+#define F_SR_NA_1 121U // Section ready
+#define F_SC_NA_1 122U // Call directory, select file, call file, call section
+#define F_LS_NA_1 123U // Last section, last segment
+#define F_AF_NA_1 124U // Ack file, ack section
+#define F_SG_NA_1 125U // Segment
+#define F_DR_TA_1 126U // Directory
 
 struct APCIControlField {
 	unsigned char octet1;
