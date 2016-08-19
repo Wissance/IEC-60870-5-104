@@ -57,9 +57,6 @@
 #define C_SE_NC_1 50U // Set point command, short floating point number
 #define C_BO_NA_1 51U // Bitstring of 32 bits
 
-// ASDUs marked (CON) in control direction are confirmed application services and may be mirrored in
-// monitor direction with different causes acknowledgements(verifications).
-
 // System information in monitor direction:
 #define M_EL_NA_1 70U // End of initialization
 
@@ -86,6 +83,44 @@
 #define F_AF_NA_1 124U // Ack file, ack section
 #define F_SG_NA_1 125U // Segment
 #define F_DR_TA_1 126U // Directory
+
+// Causes of transmission:
+#define COT_PER_CYC 1U // Periodic, cyclic
+#define COT_BACK 2U // Background scan
+#define COT_SPONT 3U // Spontaneous
+#define COT_INIT 4U // Initialized
+#define COT_REQ 5U // Request or requested
+#define COT_ACT 6U // Activation act
+#define COT_ACTCON 7U // Activation confirmation
+#define COT_DEACT 8U // Deactivation deact
+#define COT_DEACTCON 9U // Deactivation confirmation
+#define COT_ACTTERM 10U // Activation termination
+#define COT_RETREM 11U // Return information caused by a remote command
+#define COT_RETLOC 12U // Return information caused by a local command
+#define COT_FILE 13U // File transfer
+#define COT_INTROGEN 20U // Interrogated by station interrogation
+#define COT_INTRO1 21U // Interrogated by group 1 interrogation
+#define COT_INTRO1 22U // Interrogated by group 2 interrogation
+#define COT_INTRO1 23U // Interrogated by group 3 interrogation
+#define COT_INTRO1 24U // Interrogated by group 4 interrogation
+#define COT_INTRO1 25U // Interrogated by group 5 interrogation
+#define COT_INTRO1 26U // Interrogated by group 6 interrogation
+#define COT_INTRO1 27U // Interrogated by group 7 interrogation
+#define COT_INTRO1 28U // Interrogated by group 8 interrogation
+#define COT_INTRO1 29U // Interrogated by group 9 interrogation
+#define COT_INTRO1 30U // Interrogated by group 10 interrogation
+#define COT_INTRO1 31U // Interrogated by group 11 interrogation
+#define COT_INTRO1 32U // Interrogated by group 12 interrogation
+#define COT_INTRO1 33U // Interrogated by group 13 interrogation
+#define COT_INTRO1 34U // Interrogated by group 14 interrogation
+#define COT_INTRO1 35U // Interrogated by group 15 interrogation
+#define COT_INTRO1 36U // Interrogated by group 16 interrogation
+
+#define COT_RECOGEN 37U // Requested by general counter request
+#define COT_REQCO1 38U // Requested by group 1 counter request
+#define COT_REQCO2 39U // Requested by group 2 counter request
+#define COT_REQCO3 40U // Requested by group 3 counter request
+#define COT_REQCO4 41U // Requested by group 3 counter request
 
 struct APCIControlField {
 	unsigned char octet1;
