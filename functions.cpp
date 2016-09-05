@@ -1,7 +1,8 @@
 #include "functions.h"
 #include "types.h"
 
-unsigned int GetAPCIControlFieldFormat(struct APCIControlField* controlField) {
+unsigned int getAPCIControlFieldFormat(struct APCIControlField* controlField)
+{
 	if (!(controlField->octet1 & 1))
 		return APCI_CONTROL_FIELD_FORMAT_I;
 
@@ -11,8 +12,10 @@ unsigned int GetAPCIControlFieldFormat(struct APCIControlField* controlField) {
 	return APCI_CONTROL_FIELD_FORMAT_U;
 }
 
-void SetAPCIControlFieldFormat(unsigned int controlFieldFormat, struct APCIControlField* controlField) {
-	switch (controlFieldFormat) {
+void setAPCIControlFieldFormat(unsigned int controlFieldFormat, struct APCIControlField* controlField)
+{
+	switch (controlFieldFormat)
+  {
 	case APCI_CONTROL_FIELD_FORMAT_I:
 		controlField->octet1 >>= 1;
 		controlField->octet1 <<= 1;
@@ -32,23 +35,28 @@ void SetAPCIControlFieldFormat(unsigned int controlFieldFormat, struct APCIContr
 	}
 }
 
-unsigned short GetSendSequenceNumber(struct APCIControlField* controlField) {
+unsigned short getSendSequenceNumber(struct APCIControlField* controlField)
+{
 	return *(unsigned short*)controlField >> 1;
 }
 
-void SetSendSequenceNumber(unsigned short sendSequenceNumber, struct APCIControlField* controlField) {
+void setSendSequenceNumber(unsigned short sendSequenceNumber, struct APCIControlField* controlField)
+{
 	*(unsigned short*)controlField = sendSequenceNumber << 1;
 }
 
-unsigned short GetReceiveSequenceNumber(struct APCIControlField* controlField) {
+unsigned short getReceiveSequenceNumber(struct APCIControlField* controlField)
+{
 	return *((unsigned short*)controlField + 1) >> 1;
 }
 
-void SetReceiveSequenceNumber(unsigned short receiveSequenceNumber, struct APCIControlField* controlField) {
+void setReceiveSequenceNumber(unsigned short receiveSequenceNumber, struct APCIControlField* controlField)
+{
 	*((unsigned short*)controlField + 1) = receiveSequenceNumber << 1;
 }
 
-unsigned int GetAPCIControlInformation(struct APCIControlField* controlField) {
+unsigned int getAPCIControlInformation(struct APCIControlField* controlField)
+{
 	switch (controlField->octet1) {
 	case 0x07:
 		return APCI_CONTROL_INFORMATION_STARTDT_ACT;
@@ -69,8 +77,10 @@ unsigned int GetAPCIControlInformation(struct APCIControlField* controlField) {
 	return APCI_CONTROL_INFORMATION_TESTFR_CON;
 }
 
-void SetAPCIControlInformation(unsigned int controlInformation, struct APCIControlField* controlField) {
-	switch (controlInformation) {
+void setAPCIControlInformation(unsigned int controlInformation, struct APCIControlField* controlField)
+{
+	switch (controlInformation)
+  {
 	case APCI_CONTROL_INFORMATION_STARTDT_ACT:
 		controlField->octet1 = 0x07;
 		break;

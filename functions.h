@@ -16,13 +16,13 @@
 
 struct APCIControlField;
 
-unsigned int GetAPCIControlFieldFormat(struct APCIControlField* controlField);
-void SetAPCIControlFieldFormat(unsigned int controlFieldFormat, struct APCIControlField* controlField);
-unsigned short GetSendSequenceNumber(struct APCIControlField* controlField);
-void SetSendSequenceNumber(unsigned short sendSequenceNumber, struct APCIControlField* controlField);
-unsigned short GetReceiveSequenceNumber(struct APCIControlField* controlField);
-void SetReceiveSequenceNumber(unsigned short receiveSequenceNumber, struct APCIControlField* controlField);
-unsigned int GetAPCIControlInformation(struct APCIControlField* controlField);
-void SetAPCIControlInformation(unsigned int controlInformation, struct APCIControlField* controlField);
+unsigned int getAPCIControlFieldFormat(struct APCIControlField* controlField);
+void setAPCIControlFieldFormat(unsigned int controlFieldFormat, struct APCIControlField* controlField);
+unsigned short getSendSequenceNumber(struct APCIControlField* controlField);
+void setSendSequenceNumber(unsigned short sendSequenceNumber, struct APCIControlField* controlField);
+unsigned short getReceiveSequenceNumber(struct APCIControlField* controlField);
+void setReceiveSequenceNumber(unsigned short receiveSequenceNumber, struct APCIControlField* controlField);
+unsigned int getAPCIControlInformation(struct APCIControlField* controlField);
+void setAPCIControlInformation(unsigned int controlInformation, struct APCIControlField* controlField);
 
 #endif
