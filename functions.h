@@ -25,4 +25,12 @@ void setReceiveSequenceNumber(unsigned short receiveSequenceNumber, struct APCIC
 unsigned int getAPCIControlInformation(struct APCIControlField* controlField);
 void setAPCIControlInformation(unsigned int controlInformation, struct APCIControlField* controlField);
 
+unsigned int checkSocketForReadability(SOCKET endpoint, long seconds, long microseconds);
+unsigned int checkSocketForWritability(SOCKET endpoint, long seconds, long microseconds);
+unsigned int checkSocketForErrors(SOCKET endpoint, long seconds, long microseconds);
+unsigned int readFromSocket(SOCKET endpoint, unsigned char* buffer, unsigned int numberOfBytesToRead, unsigned int* numberOfBytesRead);
+unsigned int writeToSocket(SOCKET endpoint, const unsigned char* buffer, unsigned int numberOfBytesToWrite, unsigned int* numberOfBytesWritten);
+unsigned int receiveAPDU(SOCKET endpoint, unsigned char* APDUBuffer);
+unsigned int sendAPDU(SOCKET endpoint, const unsigned char* APDUBuffer);
+bool ConnectToControlledStation(const char* IPAddress, unsigned short port, SOCKET* clientSocket);
 #endif
