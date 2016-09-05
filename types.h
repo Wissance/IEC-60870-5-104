@@ -122,37 +122,43 @@
 #define COT_REQCO3 40U // Requested by group 3 counter request
 #define COT_REQCO4 41U // Requested by group 3 counter request
 
-struct APCIControlField {
+struct APCIControlField
+{
 	unsigned char octet1;
 	unsigned char octet2;
 	unsigned char octet3;
 	unsigned char octet4;
 };
 
-struct APCI {
+struct APCI
+{
 	unsigned char start;
 	unsigned char lengthOfAPDU;
 	struct APCIControlField controlField;
 };
 
-struct VariableStructureQualifier {
+struct VariableStructureQualifier
+{
 	unsigned char number : 7;
 	unsigned char SQ : 1;
 };
 
-struct CauseOfTransmission {
+struct CauseOfTransmission
+{
 	unsigned char cause : 6;
 	unsigned char PN : 1;
 	unsigned char test : 1;
 	unsigned char originatorAddress;
 };
 
-struct CommonAddressOfASDU {
+struct CommonAddressOfASDU
+{
 	unsigned char octet1;
 	unsigned char octet2;
 };
 
-struct DataUnitIdentifier {
+struct DataUnitIdentifier
+{
 	unsigned char typeIdentification;
 	struct VariableStructureQualifier variableStructureQualifier;
 
@@ -160,14 +166,16 @@ struct DataUnitIdentifier {
 	struct CommonAddressOfASDU commonAddressOfASDU;
 };
 
-struct InformationObjectIdentifier {
+struct InformationObjectIdentifier
+{
 	unsigned char informationObjectAddressOctet1;
 	unsigned char informationObjectAddressOctet2;
 	unsigned char informationObjectAddressOctet3;
 };
 
 // Quality descriptor (separate octet)
-struct QDS {
+struct QDS
+{
 	unsigned char OV : 1;
 	unsigned char RES : 3;
 	unsigned char BL : 1;
@@ -177,7 +185,8 @@ struct QDS {
 };
 
 // Single-point information (IEV 371-02-07) with quality descriptor
-struct SIQ {
+struct SIQ
+{
 	unsigned char SPI : 1;
 	unsigned char RES : 3;
 	unsigned char BL : 1;
@@ -187,7 +196,8 @@ struct SIQ {
 };
 
 // Double-point information (IEV 371-02-08) with quality descriptor
-struct DIQ {
+struct DIQ
+{
 	unsigned char DPI : 2;
 	unsigned char RES : 2;
 	unsigned char BL : 1;
@@ -197,13 +207,15 @@ struct DIQ {
 };
 
 // Value with transient state indication
-struct VTI {
+struct VTI
+{
 	char value : 7;
 	char transient : 1;
 };
 
 // Binary counter reading
-struct BCR {
+struct BCR
+{
 	char counterReadingOctet1;
 	char counterReadingOctet2;
 	char counterReadingOctet3;
@@ -216,7 +228,8 @@ struct BCR {
 };
 
 // Single command (IEV 371-03-02)
-struct SCO {
+struct SCO
+{
 	unsigned char SCS : 1;
 	unsigned char RES : 1;
 	unsigned char QU : 5;
@@ -224,21 +237,24 @@ struct SCO {
 };
 
 // Double command (IEV 371-03-03)
-struct DCO {
+struct DCO
+{
 	unsigned char DCS : 2;
 	unsigned char QU : 5;
 	unsigned char SE : 1;
 };
 
 // Regulating step command (IEV 371-03-13)
-struct RCO {
+struct RCO
+{
 	unsigned char RCS : 2;
 	unsigned char QU : 5;
 	unsigned char SE : 1;
 };
 
 // Seven octet binary time
-struct CP56Time2a {
+struct CP56Time2a
+{
 	unsigned char millisecondsOctet1;
 	unsigned char millisecondsOctet2;
 
@@ -257,7 +273,8 @@ struct CP56Time2a {
 };
 
 // Three octet binary time
-struct CP24Time2a {
+struct CP24Time2a
+{
 	unsigned char millisecondsOctet1;
 	unsigned char millisecondsOctet2;
 
@@ -281,17 +298,20 @@ typedef unsigned int BSI;
 // Fixed test bit pattern, two octets
 typedef unsigned short FBP;
 
-struct InformationObject {
+struct InformationObject
+{
 	struct InformationObjectIdentifier informationObjectIdentifier;
 	unsigned char* informationElementBuffer;
 };
 
-struct APSU {
+struct APSU
+{
 	struct DataUnitIdentifier dataUnitIdentifier;
 	struct InformationObject* informationObjects;
 };
 
-struct APDU {
+struct APDU
+{
 	struct APCI apci;
 	struct APSU* apsu;
 };
